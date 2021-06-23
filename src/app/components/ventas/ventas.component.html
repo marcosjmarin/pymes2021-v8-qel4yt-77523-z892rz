@@ -16,17 +16,17 @@
     <thead>
       <tr>
         <th class="text-center">Id Venta</th>
-        <th class="text-center">Fecha</th>        
-        <th class="text-center">Nombre Cliente</th>        
+        <th class="text-center">Fecha</th>
+        <th class="text-center">Nombre Cliente</th>
         <th class="text-center text-nowrap">Total</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of Items">
-        <td>{{item.IdVenta}}</td>        
-        <td class="text-right">{{item.NombreCliente | uppercase}}</td>
-        <td>{{item.Fecha| date:'dd/MM/yyyy'}}</td>
-        <td>{{item.Total}}</td>        
+        <td>{{item.IdVenta}}</td>
+        <td class="text-right">{{item.Fecha | date:'dd/MM/yyyy'}}</td>
+        <td>{{item.ClienteNombre}}</td>
+        <td>{{item.Total}}</td>
         <td class="text-center text-nowrap">
           <button
             type="button"
@@ -39,5 +39,5 @@
         </td>
       </tr>
     </tbody>
-  </table>  
+  </table>
 </div>

@@ -39,7 +39,7 @@ export class VentasComponent implements OnInit {
   ngOnInit() {
     this.FormRegistro = this.formBuilder.group({
       IdVenta: [null],
-      NombreCliente: [
+      ClienteNombre: [
         null,
         [Validators.required, Validators.minLength(5), Validators.maxLength(55)]
       ],
