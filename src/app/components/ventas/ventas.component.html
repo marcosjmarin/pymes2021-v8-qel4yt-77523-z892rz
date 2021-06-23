@@ -1,0 +1,43 @@
+<h3>{{Titulo}} <small>{{TituloAccionABMC[AccionABMC]}}</small></h3>
+
+<form name="FormBusqueda" [formGroup]="FormBusqueda" class="bg-light" *ngIf="AccionABMC == 'L'">
+  <!-- Botones -->
+  <div class="row justify-content-center">
+    <button type="button" class="btn btn-primary" (click)="Buscar();">
+      <span class="fas fa-search"> </span> Buscar
+    </button>
+  </div>
+</form>
+
+
+<!-- Tabla de resutados de busqueda y Paginador-->
+<div id="divTablaResultados" *ngIf="AccionABMC == 'L' &&  Items?.length > 0">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="text-center">Id Venta</th>
+        <th class="text-center">Fecha</th>        
+        <th class="text-center">Nombre Cliente</th>        
+        <th class="text-center text-nowrap">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Items">
+        <td>{{item.IdVenta}}</td>        
+        <td class="text-right">{{item.NombreCliente | uppercase}}</td>
+        <td>{{item.Fecha| date:'dd/MM/yyyy'}}</td>
+        <td>{{item.Total}}</td>        
+        <td class="text-center text-nowrap">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-primary"
+            title="Consultar"
+            (click)="Consultar(item)"
+          >
+            <span class="fas fa-eye"></span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
